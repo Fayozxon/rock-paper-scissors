@@ -12,17 +12,19 @@ export default {
 
     <button class="rules-btn btn btn-inline" @click="isRulesVisible = true">Rules</button>
     
-    <div class="overlay" v-show="isRulesVisible">
-        <div class="box">
-            <div class="box__header">
-                <h3>Rules</h3>
-                <button type="button" @click="isRulesVisible = false">
-                    <img src="../assets/icon-close.svg" alt="Close">
-                </button>
+    <transition name="fade" mode="out-in">
+        <div class="overlay" v-show="isRulesVisible" @click.self="isRulesVisible = false">
+            <div class="box">
+                <div class="box__header">
+                    <h3>Rules</h3>
+                    <button type="button" @click="isRulesVisible = false">
+                        <img src="../assets/icon-close.svg" alt="Close">
+                    </button>
+                </div>
+                <img src="../assets/image-rules.svg" class="rules-img" alt="Game rules explanation">
             </div>
-            <img src="../assets/image-rules.svg" class="rules-img" alt="Game rules explanation">
         </div>
-    </div>
+    </transition>
 
 
 </template>

@@ -28,8 +28,18 @@ export default {
 
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import './main.scss';
 
+/* Fade transitions */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: 200ms;
+}
 
 </style>
